@@ -437,6 +437,6 @@ type LanguageCode =
 
 type Locale = `${LanguageCode}-${Alpha2Code}`;
 
-function getDefaultLocale() {
-  return 'en-AU' as Locale;
+export function getDefaultLocale() {
+  return "en-AU" as Locale;
 }
