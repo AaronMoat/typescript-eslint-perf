@@ -1,17 +1,21 @@
 const tseslint = require("typescript-eslint");
 
 module.exports = [
-  ...[...tseslint.configs.recommendedTypeChecked].map((config) => ({
-    ...config,
+  {
+    ...tseslint.configs.base,
     files: [`**/*.ts`],
 
     languageOptions: {
-      ...config.languageOptions,
+      ...tseslint.configs.base.languageOptions,
       parserOptions: {
-        ...(config.languageOptions?.parserOptions ?? {}),
+        ...(tseslint.configs.base.languageOptions?.parserOptions ?? {}),
         projectService: true,
         // project: "./tsconfig.json",
       },
     },
-  })),
+
+    rules: {
+      "@typescript-eslint/no-unsafe-return": "error",
+    },
+  },
 ];
