@@ -9,8 +9,7 @@ module.exports = [
       ...tseslint.configs.base.languageOptions,
       parserOptions: {
         ...(tseslint.configs.base.languageOptions?.parserOptions ?? {}),
-        projectService: true,
-        // project: "./tsconfig.json",
+        project: "./tsconfig.json",
       },
     },
 
